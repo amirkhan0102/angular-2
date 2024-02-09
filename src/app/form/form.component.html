@@ -1,0 +1,44 @@
+<!-- <div class="container">
+    <h1>Forms in Bootstrap </h1>
+
+    <h4>Vertical Forms</h4>
+
+    <form [formGroup]="userRegister">
+        <div class="form-group">
+            <label for="name">UserName:</label>
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter your Username">
+
+
+            <div *ngIf="userRegister.get('name').invalid && (userRegister.get('name').dirty|| userRegister.get('name').touched)"
+                class="alert alert-danger ">
+                <div *ngIf="userRegister.get('name').errors.required">Ism kiritish majburiy </div>
+
+                <div *ngIf="userRegister.get('name').errors.maxlength">Ism ko'pi bn 10 ta harfdan iborat bo'lsin</div>
+
+                <div *ngIf="userRegister.get('name').errors.minlength">Ism kamida 4 taharfdan iborat bo'lsin</div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="text" class="form-control" id="password" formControlName="password" placeholder="Enter your password">
+                <div *ngIf="userRegister.get('password').invalid && (userRegister.get('password').dirty|| userRegister.get('password').touched)"
+                    class="alert alert-danger ">
+                    <div *ngIf="userRegister.get('password').errors.required">Parol kiritish majburiy  </div>
+
+
+                    <div *ngIf="userRegister.get('name').errors.maxlength">Parol ko'pi bn 15 ta harfdan iborat bo'lsin</div>
+
+                    <div *ngIf="userRegister.get('name').errors.minlength">Parol kamida 6 taharfdan iborat bo'lsin</div>
+
+                </div>
+            </div>
+        </div>
+     
+
+        <br>
+        <button class="btn btn-danger" type="button">Login </button>
+        <a href="#" class="link">Not regester yet</a>
+    </form>
+
+</div> -->

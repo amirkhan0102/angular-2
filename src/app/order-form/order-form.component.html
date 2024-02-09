@@ -1,0 +1,25 @@
+
+<button  (click)="addItem()">yangi shaxs</button>
+
+
+<div [formGroup]="orderForm">
+
+    <label> Mijoz ismi</label>
+    <input type="text" formControlName="customerName">
+
+    <div formArrayName="items" *ngFor="let item of orderForm.get('items')   ['controls'];let i-index">
+<div [formGroupName]="i" >
+
+<label > Nomi:</label>
+<input type="text" formControlName="name"><br>
+<label > Narxi:</label>
+<input type="text" formControlName="price">
+</div>
+
+
+    </div>
+
+
+
+
+</div>

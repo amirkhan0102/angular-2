@@ -1,0 +1,93 @@
+<div class="container">
+
+    <div *ngIf="form.errors" class="alert alert-danger">Login yoki Parol xato </div>
+
+
+    <form [formGroup]="form" (ngSubmit)="sigIn()">
+
+
+        <div formGroupName="account"> </div>
+            <div class="form-group">
+
+                <label for="login">Login</label>
+                <input type="text" id="login" class="form-control" formControlName="login">
+                <div *ngIf="login.touched && login.invalid" class="alert alert-danger">
+                    <div *ngIf="login.errors.required">Login kiritish majburiy</div>
+                    <div *ngIf="login.errors.minlength">Login kamida {{login.errors.minlength.requiredLength}} bo'lishi
+                        kerak</div>
+                    <div *ngIf="login.errors.maxlength">Login ko'pi bilan {{login.errors.maxlength.requiredLength}}
+                        bo'lishi
+                        kerak</div>
+                    <div *ngIf="login.errors.noSpace">Bo'sh joy bo'lishi mumkin emas</div>
+                    <div *ngIf="login.errors.isTaken">Bu login band</div>
+                </div>
+
+            </div>
+            <div class="form-group">
+
+                <label for="parol">Parol</label>
+                <input type="password" id="parol" class="form-control" formControlName="parol">
+                <div *ngIf="parol.touched && parol.invalid" class="alert alert-danger">
+                    <div *ngIf="parol.errors.required">Parol kiritish majburiy</div>
+                    <div *ngIf="parol.errors.minlength">Parol kamida {{parol.errors.minlength.requiredLength}} bo'lishi
+                        kerak</div>
+                    <div *ngIf="parol.errors.maxlength">Parol ko'pi bilan {{parol.errors.maxlength.requiredLength}}
+                        bo'lishi
+                        kerak</div>
+                    <div *ngIf="parol.errors.isTaken">Bu parol band</div>
+                </div>
+
+            </div>
+            <!-- <div class="form-group">
+                <label for="fax">Fax</label>
+                <input type="text" id="fax" class="form-control" formControlName="fax" placeholder="">
+                <div *ngIf="fax.touched && fax.invalid" class="alert alert-danger">
+                    <div *ngIf="fax.errors.required">Fax Kiritish majburiy</div>
+                    <div *ngIf="fax.errors.minlength">Fax kamida {{fax.errors.minlength.requiredLength}} bo'lishi
+                        kerak</div>
+                    <div *ngIf="fax.errors.noSpace">Bo'sh joy bo'lishi mumkin emas</div>
+                </div>
+    
+                </div> -->
+
+
+            <!-- <div class="form-group">
+                <label for="passwword">parol</label>
+                <input type="password" id="passwword" class="form-control" formControlName="password ">
+                <div *ngIf="passwword.touched && passwword.invalid" class="alert alert-danger">
+    
+                    <div *ngIf="password.errors.required">Parol Kiritish majburiy</div>
+                    <div *ngIf="password.errors.minlength">parol kamida {{passwword.errors.minlength.requiredLength}}
+                        bo'lishi kerak
+                    </div>
+                    <div *ngIf="password.errors.noSpace">Bo'sh joy bo'lishi mumkin emas</div>
+    
+                </div>
+            </div> -->
+            <!-- <div class="form-group">
+                <label for="password">Confirim password</label>
+                <input type="password" id="passwword" class="form-control" formControlName="passwword">
+                <div *ngIf="passwword.touched && passwword.invalid" class="alert alert-danger">
+                    <div *ngIf="passwword.errors.required">password Kiritish majburiy</div>
+                    <div *ngIf="passwword.errors.minlength">password kamida {{passwword.errors.minlength.requiredLength}}
+                        bo'lishi
+                        kerak</div>
+                    <div *ngIf="passwword.errors.noSpace">Bo'sh joy bo'lishi mumkin emas</div>
+                </div>
+                <p>Please make sure your password match</p>
+    
+            </div>
+            <br>
+            <label> <input type="radio"> Ship to this address </label>
+            <br>
+            <label> <input type="radio"> Ship to different address </label>
+            <br>
+            <br> -->
+            <button class="btn btn-primary">Ro'yhatdan o'tish</button>
+       
+
+
+
+
+    </form>
+</div>

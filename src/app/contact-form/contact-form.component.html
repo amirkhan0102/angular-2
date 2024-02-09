@@ -1,0 +1,57 @@
+<div class="container">
+
+    <form (ngSubmit)="SubmitMetod()">
+        <div class="form-group">
+
+            <label for="firstName">Ism</label>
+
+            <input minlength="5" required ngModel type="text" #firstName="ngModel" id="firstName" class="form-control"
+                (change)="onNameChange(firstName)">
+
+            <div class="alert alert-danger" *ngIf=" firstName.touched && firstName.invalid">
+
+                <div *ngIf="firstName.errors.required">Ism kiritish majburiy</div>
+                <div *ngIf="firstName.errors.minlength">Ism kamida {{firstName.errors.minlength.requiredLenght}} ta
+                    harfdan
+                    iborat bo'lishi kerak.</div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="email">Email manzil</label>
+
+            <input required ngModel type="email" id="email" #email="ngModel" class="form-control">
+
+
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="messaage">Xabar:</label>
+
+            <textarea id="messaage" class="form-control"></textarea>
+
+        </div>
+
+        <div class="radio">
+            <label>
+                <input ngModel type="radio" name="obunabulmoq" value="1"> A'zo bo'lmoq
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input ngModel type="radio" name="contactMetod" value="2"> Bog'lanish
+            </label>
+        </div>
+
+        <button class="btn btn-danger" type="submit"> Yuborish</button>
+    </form>
+
+
+</div>
